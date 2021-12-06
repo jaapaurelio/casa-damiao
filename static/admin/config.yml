@@ -1,0 +1,27 @@
+backend:
+  name: test-repo
+locale: "pt"
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: articles
+    label: Artigos
+    folder: article
+    create: true
+    fields:
+      - { name: path, label: Url }
+      - { name: title, label: Título }
+      - { name: body, label: Texto, widget: markdown }
+  - name: settings
+    label: Settings
+    files:
+      - file: data/settings/navigation.yml
+        label: Menus
+        name: navigation
+        fields:
+          - label: Menu Principal
+            name: nav_items
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Path, name: path, widget: string }
